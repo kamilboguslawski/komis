@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CreditWAR">
+    <output-path>$PROJECT_DIR$/out/artifacts/CreditWAR</output-path>
+    <root id="archive" name="CreditWAR.war">
+      <element id="javaee-facet-resources" facet="CreditWAR/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CreditWAR" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="JSF" />
+          <element id="library" level="project" name="PrimeFaces-6.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

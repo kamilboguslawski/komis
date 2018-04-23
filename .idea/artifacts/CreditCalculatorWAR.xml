@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CreditCalculatorWAR">
+    <output-path>$PROJECT_DIR$/out/artifacts/CreditCalculatorWAR</output-path>
+    <root id="archive" name="CreditCalculatorWAR.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CreditCalculatorWAR" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="CreditCalculatorWAR/web/Web" />
+    </root>
+  </artifact>
+</component>

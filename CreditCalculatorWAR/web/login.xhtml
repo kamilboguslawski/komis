@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Logowanie do systemu</title>
+</h:head>
+<h:body>
+
+
+    <b:navBar brand="Komis" brandHref="" inverse="true">
+
+        <div class="navbar-form  ">
+            <h:form horizontal="true">
+
+
+                <b:inputText id="login"
+                             value="#{login.login}"
+                             placeholder="Login"
+                             span="3"
+                             required="true"
+                             requiredMessage="Podaj login!"/>
+
+
+                <b:inputSecret id="Password"
+                               value="#{login.password}"
+                               placeholder="haslo"
+                               span="3"
+                               required="true"
+                               requiredMessage="Podaj haslo!"/>
+
+                <b:commandButton value="Zaloguj"
+                                 action="#{login.login()}"
+                                 look="info"
+                />
+                <b:navbarLinks pull="right">
+                    <b:navLink value="Panel administracyjny"
+                               href="http://localhost:8080/admin/panel/admCarList.xhtml"></b:navLink>
+                </b:navbarLinks>
+            </h:form>
+        </div>
+    </b:navBar>
+    <h3 style="padding-left:30px">Zaloguj się, by móc korzystać z systemu</h3>
+    <hr></hr>
+
+    <div class="col-md-5">
+        <b:messages styleClass="msgs" redisplay="true" recursive="true"/>
+    </div>
+</h:body>
+</html>

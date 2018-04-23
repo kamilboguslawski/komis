@@ -1,0 +1,50 @@
+        HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+                .getExternalContext().getSession(true);
+        car = (CarEntity) session.getAttribute("car");
+        System.out.println("metoda post construct" + car.getIdcar());
+        if (car != null) {
+            session.removeAttribute("car");
+            System.out.println("metoda post construct, usun atrybut car, 1 if");
+        }
+        if (car == null) {
+            System.out.println("metoda post construct, 2 if, car == null");
+            HttpServletRequest req = (HttpServletRequest) FacesContext
+                    .getCurrentInstance().getExternalContext().getRequest();
+            idcar = req.getParameter("p");
+            if (idcar != null) {
+                // parse id
+                Integer id = null;
+                try {
+                    id = Integer.parseInt(idcar);
+                    System.out.println("metoda post construct, try - catch, parsowanie idcar");
+                } catch (NumberFormatException e) {
+                    System.out.println("catch");
+                }
+                if (id != null) {
+                    // if parsing successful
+                    System.out.println("metoda post construct, id != null");
+                    car = carDAO.find(id);
+                }
+            }
+        }
+
+//         if loaded record is to be edited then copy data to properties
+        if (car != null && car.getIdcar() == 0) {
+            System.out.println("postconstruct, trzeci if ");
+            setMark(car.getMark());
+            setModel(car.getModel());
+//            setBuyPrice(Integer.toString(car.getBuyPrice()));
+            // appropriately convert date to string
+//            String dateString = new SimpleDateFormat("dd-MM-yyyy")
+//                    .format(car.getBuyDate());
+//            setBuyDate(dateString);
+        }
+
+//        przez te z sesją cos nie dzialo to wykomentowalem
+//        ale to ci w sumie niepotrzebne
+
+        <ui:insert name="footer">
+            <div id="footer" class="box bottom-space">
+                <ui:include src="/templates/footer.xhtml"/>
+            </div>
+        </ui:insert>

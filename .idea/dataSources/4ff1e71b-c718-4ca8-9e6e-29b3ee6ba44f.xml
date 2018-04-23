@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="jpdsi_calculator@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="jpdsi_calculator">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <table id="7" parent="2" name="additional_cost"/>
+    <table id="8" parent="2" name="car"/>
+    <table id="9" parent="2" name="customer"/>
+    <table id="10" parent="2" name="user"/>
+    <column id="11" parent="7" name="idadd_cost">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="12" parent="7" name="part">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="13" parent="7" name="cost">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="14" parent="7" name="car_idcar">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="15" parent="7" name="fk_additional_cost_car1_idx">
+      <ColNames>car_idcar</ColNames>
+    </index>
+    <key id="16" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idadd_cost</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="17" parent="7" name="fk_additional_cost_car1">
+      <ColNames>car_idcar</ColNames>
+      <RefSchemaName>jpdsi_calculator</RefSchemaName>
+      <RefTableName>car</RefTableName>
+      <RefColNames>idcar</RefColNames>
+    </foreign-key>
+    <column id="18" parent="8" name="idcar">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="8" name="mark">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="20" parent="8" name="model">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="21" parent="8" name="buy_date">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="22" parent="8" name="sell_date">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+    </column>
+    <column id="23" parent="8" name="buy_price">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="24" parent="8" name="sell_price">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="25" parent="8" name="add_cost">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="26" parent="8" name="sum_cost">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="27" parent="8" name="gain">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="28" parent="8" name="sell_state">
+      <Position>11</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <column id="29" parent="8" name="customer_idcustomer">
+      <Position>12</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="8" name="user_iduser">
+      <Position>13</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="31" parent="8" name="fk_car_customer_idx">
+      <ColNames>customer_idcustomer</ColNames>
+    </index>
+    <index id="32" parent="8" name="fk_car_user1_idx">
+      <ColNames>user_iduser</ColNames>
+    </index>
+    <key id="33" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idcar</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="8" name="fk_car_customer">
+      <ColNames>customer_idcustomer</ColNames>
+      <RefSchemaName>jpdsi_calculator</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>idcustomer</RefColNames>
+    </foreign-key>
+    <foreign-key id="35" parent="8" name="fk_car_user1">
+      <ColNames>user_iduser</ColNames>
+      <RefSchemaName>jpdsi_calculator</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>iduser</RefColNames>
+    </foreign-key>
+    <column id="36" parent="9" name="idcustomer">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="38" parent="9" name="surname">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="39" parent="9" name="city">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="40" parent="9" name="street_and_home">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="41" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idcustomer</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="10" name="iduser">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="10" name="login">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="44" parent="10" name="pass">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="45" parent="10" name="role">
+      <Position>4</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <key id="46" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>iduser</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
+    <title>Logowanie do systemu</title>
+
+</h:head>
+<h:body style="background-color: #555c5b">
+
+    <h:form>
+        <p:growl id="messages"/>
+
+        <p:menubar>
+            <p:menuitem value="Panel komisu" url="http://localhost:8080/pages/login.xhtml" icon="fa-home" />
+            <f:facet name="options">
+                <p:commandButton value="zaloguj" onclick="PF('dlg').show();" title="login"/>
+            </f:facet>
+        </p:menubar>
+    </h:form>
+    <br></br>
+    <h2 style="padding-left:30px; color:white;"> Panel administracyjny</h2>
+    <hr></hr>
+    <h:form>
+        <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+        <p:dialog header="Login" widgetVar="dlg" resizable="false">
+            <h:panelGrid columns="2" cellpadding="5"  >
+                <h:outputLabel for="username" value="Username:" />
+                <p:inputText id="username"
+                             value="#{loginAdm.login}"
+                             required="true"
+                             requiredMessage="Podaj login!"
+                             label="username" />
+
+                <h:outputLabel for="password" value="Password:" />
+                <p:password id="password"
+                            value="#{loginAdm.password}"
+                            required="true"
+                            requiredMessage="Podaj haslo!"
+                            label="password" />
+
+                <f:facet name="footer">
+                    <p:commandButton value="Login" action="#{loginAdm.login()}"  />
+                </f:facet>
+            </h:panelGrid>
+        </p:dialog>
+    </h:form>
+
+</h:body>
+</html>

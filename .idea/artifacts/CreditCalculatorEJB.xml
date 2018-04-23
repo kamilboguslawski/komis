@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="CreditCalculatorEJB">
+    <output-path>$PROJECT_DIR$/out/artifacts/CreditCalculatorEJB</output-path>
+    <root id="archive" name="CreditCalculatorEJB.jar">
+      <element id="module-output" name="CreditCalculatorEJB" />
+    </root>
+  </artifact>
+</component>

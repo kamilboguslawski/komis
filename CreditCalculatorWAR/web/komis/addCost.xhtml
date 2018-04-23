@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/templates/main.xhtml">
+
+    <ui:define name="title">
+        Dodatkowy koszt
+    </ui:define>
+
+    <ui:define name="content">
+        <h1 style="padding-left:30px">Dodatkowy zakup / usługa</h1>
+        <hr></hr>
+
+
+        <div class="col-md-5" >
+            <b:form >
+                <b:dataTable value="#{costList.getCarCostList()}" var="cost">
+                    <b:dataTableColumn label="Koszt" value="#{cost.part}" order="asc" colspan="2" />
+                    <b:dataTableColumn label="Kwota" value="#{cost.cost}" />
+                </b:dataTable>
+            </b:form>
+        </div>
+
+        <br></br>
+        <br></br>
+
+        <div class="col-md-7">
+        <b:form horizontal="true">
+            <b:inputText span="3"
+                         placeholder="Część/Usługa"
+                         required="true"
+                         label="Nazwa "
+                         value="#{addCost.part}"
+                         colMd="10"
+                         requiredMessage="Podaj część / usługę!"
+                         labelColMd="2">
+
+            </b:inputText>
+            <b:inputText span="3"
+                         placeholder="Kwota"
+                         required="true"
+                         label="Kwota"
+                         value="#{addCost.cost}"
+                         colMd="10"
+                         requiredMessage="Podaj kwotę!"
+                         labelColMd="2">
+
+            </b:inputText>
+
+            <b:column offset="2">
+                <b:commandButton value="Dodaj"
+                                 look="default"
+                                 action="#{addCost.saveData()}"
+                                 style="width:80px"/>
+            </b:column>
+        </b:form>
+            <br></br>
+            <div class="col-md-6">
+                <b:messages styleClass="msgs" redisplay="true" recursive="true" />
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
+</html>

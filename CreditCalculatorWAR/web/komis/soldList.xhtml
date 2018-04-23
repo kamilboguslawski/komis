@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/templates/main.xhtml">
+
+	<ui:define name="title">Sprzedane pojazdy</ui:define>
+
+	<ui:define name="content">
+		<h1 style="padding-left:30px">Sprzedane pojazdy</h1>
+		<hr></hr>
+			<div class="col-md-12">
+					<b:form>
+						<b:dataTable value="#{carList.soldList}" var="car"
+									 excel="true"
+									 csv="true"
+									 pdf="true"
+									 columnVisibility="true" >
+							<b:dataTableColumn label="Marka" value="#{car.mark}" order="asc" />
+							<b:dataTableColumn label="Model" value="#{car.model}" />
+							<b:dataTableColumn label="Data kupna" value="#{car.buyDate}" />
+							<b:dataTableColumn label="Data sprzedazy" value="#{car.sellDate}" />
+							<b:dataTableColumn label="Zakup" value="#{car.buyPrice}" />
+							<b:dataTableColumn label="Sprzedaż" value="#{car.sellPrice}" />
+							<b:dataTableColumn label="Dod. koszta" value="#{car.addCost}" />
+							<b:dataTableColumn label="Zarobek" value="#{car.gain}" />
+							<b:dataTableColumn label="Imie" value="#{car.customerByCustomerIdcustomer.name}" />
+							<b:dataTableColumn label="Nazwisko" value="#{car.customerByCustomerIdcustomer.surname}" />
+							<b:dataTableColumn label="Miasto" value="#{car.customerByCustomerIdcustomer.city}" />
+							<b:dataTableColumn label="Ulica" value="#{car.customerByCustomerIdcustomer.streetAndHome}" />
+						</b:dataTable>
+
+					</b:form>
+			</div>
+	</ui:define>
+
+</ui:composition>
+
+</html>

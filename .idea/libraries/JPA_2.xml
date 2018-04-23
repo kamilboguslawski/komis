@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JPA 2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Servers/JBOSS/EAP-7.1.0/modules/system/layers/base/javax/persistence/api/main/hibernate-jpa-2.1-api-1.0.0.Final-redhat-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

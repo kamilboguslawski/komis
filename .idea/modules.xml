@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CreditCalculatorEAR/CreditCalculatorEAR.iml" filepath="$PROJECT_DIR$/CreditCalculatorEAR/CreditCalculatorEAR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreditCalculatorEJB/CreditCalculatorEJB.iml" filepath="$PROJECT_DIR$/CreditCalculatorEJB/CreditCalculatorEJB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreditCalculatorWAR/CreditCalculatorWAR.iml" filepath="$PROJECT_DIR$/CreditCalculatorWAR/CreditCalculatorWAR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreditWAR/CreditWAR.iml" filepath="$PROJECT_DIR$/CreditWAR/CreditWAR.iml" />
+    </modules>
+  </component>
+</project>

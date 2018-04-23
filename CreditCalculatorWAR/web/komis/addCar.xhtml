@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="/templates/main.xhtml">
+
+    <ui:define name="title">
+        Dodaj pojazd
+    </ui:define>
+
+    <ui:define name="content">
+        <h1 style="padding-left:30px">Podaj dane pojazdu</h1>
+        <hr></hr>
+        <b:form horizontal="true">
+            <b:inputText span="3"
+                         placeholder="Marka"
+                         required="true"
+                         label="Marka"
+                         value="#{addCar.mark}"
+                         colMd="10"
+                         requiredMessage="Podaj markę!"
+                         labelColMd="2">
+
+            </b:inputText>
+            <b:inputText span="3"
+                         placeholder="Model"
+                         required="true"
+                         label="Model"
+                         value="#{addCar.model}"
+                         colMd="10"
+                         requiredMessage="Podaj model!"
+                         labelColMd="2">
+
+            </b:inputText>
+            <b:inputText span="3"
+                         placeholder="Cena"
+                         required="true"
+                         label="Cena"
+                         value="#{addCar.buyPrice}"
+                         colMd="10"
+                         requiredMessage="Podaj kwotę zakupu!"
+                         labelColMd="2">
+
+            </b:inputText>
+            <b:dateTimePicker span="3"
+                              placeholder="rr-mm-dd hh-mm-ss"
+                              required="true"
+                              label="Data zakupu"
+                              value="#{addCar.buyDate}"
+                              colMd="10"
+                              requiredMessage="Podaj datę zakupu!"
+                              labelColMd="2">
+
+            </b:dateTimePicker>
+            <b:column offset="3">
+                <b:commandButton value="Dodaj"
+                                 look="default"
+                                 action="#{addCar.saveData()}" style="width:80px"/>
+            </b:column>
+
+        </b:form>
+        <hr></hr>
+
+        <div class="col-md-5">
+            <b:messages styleClass="msgs" redisplay="true" recursive="true"/>
+        </div>
+    </ui:define>
+
+</ui:composition>
+
+</html>

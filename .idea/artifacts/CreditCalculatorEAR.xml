@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="CreditCalculatorEAR">
+    <output-path>$PROJECT_DIR$/out/artifacts/CreditCalculatorEAR</output-path>
+    <root id="archive" name="CreditCalculatorEAR.ear">
+      <element id="javaee-facet-resources" facet="CreditCalculatorEAR/javaeeApplication/javaEEApplication" />
+      <element id="artifact" artifact-name="CreditCalculatorEJB" />
+      <element id="artifact" artifact-name="CreditCalculatorWAR" />
+      <element id="artifact" artifact-name="CreditWAR" />
+    </root>
+  </artifact>
+</component>

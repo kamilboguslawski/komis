@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:b="http://bootsfaces.net/ui"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+
+    <b:navBar brand="Komis" brandHref="" inverse="true">
+        <b:form>
+            <b:navbarLinks>
+
+                <b:navCommandLink value="Lista" action="#{carList.carListView()}">
+                </b:navCommandLink>
+
+                <b:navCommandLink value="Dodaj" action="#{carList.addCarView()}">
+                </b:navCommandLink>
+
+                <b:navCommandLink value="Sprzedane" action="#{carList.soldCarView()}">
+                </b:navCommandLink>
+
+            </b:navbarLinks>
+
+            <b:navbarLinks pull="right">
+                <b:navCommandLink  rendered="#{sessionService.currentUser != null}" value="wyloguj"
+                                  action="#{login.logout()}">
+                </b:navCommandLink>
+            </b:navbarLinks>
+        </b:form>
+    </b:navBar>
+</ui:composition>
